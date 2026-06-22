@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Bonne Vie in Provence - Author Success Center&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-cream: #FAF6F0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--card-white: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--provence-gold: #D4AF37;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--sage-green: #8A9A86;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--sage-light: #F0F4F1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--lavender: #967BB6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-dark: #333333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #666666;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #EAE3D8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-cream);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Header Styles */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.brand h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2C3E2B;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.brand p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--provence-gold);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.actions {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-secondary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-secondary:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #F3ECE1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2C3E2B;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #3D573C;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Analytics Dashboard Grid */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.analytics-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(3, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 12px rgba(234, 227, 216, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--sage-light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2C3E2B;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.stat {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2C3E2B;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.progress-bar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #EAEAEA;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.progress-fill {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--sage-green);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 14%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: width 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Workspace Grid Table */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.workspace-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(234, 227, 216, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.workspace-title-area {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.workspace-title-area h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2C3E2B;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table-responsive {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>table {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>th {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #FAF8F5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>td {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>vertical-align: top;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2C3E2B;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>select, textarea, input[type="text"] {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #FCFAF7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: border 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>select:focus, textarea:focus, input[type="text"]:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--sage-green);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #FFF;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>textarea {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resize: vertical;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-delete {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #CC0000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-delete:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FF0000;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="brand"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Bonne Vie in Provence&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;HeartWork Creative • Author Success Center &amp; Sandbox&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn-secondary" onclick="exportToCSV()"&gt;Export to Sheets (CSV)&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn-secondary" onclick="downloadBackup()"&gt;📥 Download Backup File&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn-primary" onclick="document.getElementById('uploadInput').click()"&gt;📤 Upload Coach/Client File&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="file" id="uploadInput" style="display:none" onchange="uploadBackup(event)" accept=".json"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="analytics-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-title"&gt;80/20 Marketing Balance&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="badge" id="balance-badge"&gt;Balanced ✅&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat" id="balance-stat"&gt;14%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 0.85rem; color: var(--text-muted);"&gt;Focusing beautifully on storytelling and deep connection over sales text.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" id="balance-bar"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-title"&gt;Plan Completion Status&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="badge"&gt;Sandbox State&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat" id="completion-stat"&gt;3 / 7&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 0.85rem; color: var(--text-muted);" id="status-breakdown"&gt;Drafts: 4 | Scheduled: 3 | Live: 0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-title"&gt;Top Content Pillar Focus&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="badge"&gt;Focus Map&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat" style="font-size: 1.5rem; padding-top: 8px;" id="top-pillar"&gt;Provence State of Mind 🌿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 0.85rem; color: var(--text-muted);"&gt;Themes remain elegantly distributed to ensure reader resonance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="workspace-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="workspace-title-area"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;📝 Georgie's Content Planning Workspace&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn-primary" onclick="addNewRow()"&gt;+ Add Custom Day Row&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="table-responsive"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 12%"&gt;Day / Date&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 18%"&gt;Core Pillar Focus&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 15%"&gt;Platform Target&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 25%"&gt;Written Caption Sandbox&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 15%"&gt;Visual Asset Reference&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 12%"&gt;Posting Status&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 20%"&gt;Coaching Notes&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th style="width: 3%"&gt;&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody id="sandbox-tbody"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>© 2026 HeartWork Creative • Dedicated Beta Program Toolkit for Georgie Grossman &amp; "Bonne Vie in Provence" • Built in Collaboration with Ronda Taylor. All Rights Reserved.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Initial Seed Data mapping directly to the layout</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const initialData = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 1 - Monday", pillar: "Provence State of Mind 🌿", platform: "Facebook Only", caption: "Have you ever wondered where a story begins? For Wendy, it started with a single step into an unknown landscape. For me, it began with an enduring love of France. Writing this book reminded me that sometimes our true path finds us when we least expect it. Have you ever taken a leap of faith into a new chapter of life?", visual: "Book + Coffee Mockup", status: "🔄 Scheduled", notes: "Perfect introductory connection post, Georgie! Let's get an early reading photo ready for this." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 2 - Tuesday", pillar: "Provence State of Mind 🌿", platform: "Facebook + Instagram", caption: "Provence isn't just a place on a map; it's a sensory sanctuary. It's the scent of rosemary warmed by the sun, the slow rhythm of the village markets, and the peace of a stone cottage at sundown. Here is one of my favorite corners of France. Do you prefer active vacations, or slow, restful escapes?", visual: "Lavender Fields Graphic", status: "🔄 Scheduled", notes: "Try using the 'Sage Green' overlay for this photo graphic in Canva." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 3 - Wednesday", pillar: "Chosen Friendships 💜", platform: "Instagram Only", caption: "Meet Wendy, the heartbeat of Bonne Vie in Provence. She didn't expect her life to transform, but she found a collection of chosen friends who held up a mirror to her true self. In our adult lives, friendships are often our deepest anchors. Tag a dear friend who has stood by you through life's unexpected turns!", visual: "Meet the Character Graphic", status: "🔄 Scheduled", notes: "Awesome! We will schedule this on Instagram to build visual excitement around the cast." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 4 - Thursday", pillar: "Healing &amp; Growth 🏡", platform: "Facebook + Instagram", caption: "In Bonne Vie in Provence, the villa is more than brick and stone—it is a safe harbor where hearts find room to heal. We all need a quiet space to mend and catch our breath. Where is your favorite personal retreat when life gets too busy?", visual: "Cozy Quote Card", status: "☐ Draft", notes: "Keep the visual warm and elegant." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 5 - Friday", pillar: "Book Promotion 📖", platform: "Facebook + Instagram", caption: "If you are looking for a heartwarming escape filled with friendship, emotional healing, beautiful French scenery, and second chances, I’d love to welcome you to the community. Bonne Vie in Provence is now available in soft cover or digital eBook. Find the path to your copy via the link in my bio!", visual: "EPUB Stack Promo Image", status: "☐ Draft", notes: "This is our 20% promotion. Simple, clear, and very elegant." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 6 - Saturday", pillar: "Provence State of Mind 🌿", platform: "Pinterest Only", caption: "Taking the slow road through southern France. Let's wander down cobblestone pathways, seek out fresh lavender honey, and remember to live fully in the present moment. #ProvenceLiving #SlowLiving", visual: "French Village Alleyway", status: "☐ Draft", notes: "Pinterest-focused! Great for visual aesthetics." },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ day: "Day 7 - Sunday", pillar: "Healing &amp; Growth 🏡", platform: "Goodreads Update", caption: "Hello Goodreads friends! This week, I have been thinking a lot about the courage it takes to leave comfortable shores behind in search of true transformation. What are you reading to feed your soul this Sunday?", visual: "Review Highlight Graphic", status: "☐ Draft", notes: "Excellent Goodreads connection post." }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const pillars = ["Provence State of Mind 🌿", "Second Chances ✨", "Chosen Friendships 💜", "Healing &amp; Growth 🏡", "Book Promotion 📖"];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const platforms = ["Facebook Only", "Instagram Only", "Facebook + Instagram", "Goodreads Update", "Pinterest Only"];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const statuses = ["☐ Draft", "🔄 Scheduled", "✅ Live"];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Initialize application and look for local cache autosaves</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let activeData = JSON.parse(localStorage.getItem('bonneVieSandboxData')) || initialData;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderTable() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const tbody = document.getElementById('sandbox-tbody');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tbody.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>activeData.forEach((row, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const tr = document.createElement('tr');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tr.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="text" class="day-label" value="${row.day}" onchange="updateValue(${index}, 'day', this.value)"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select onchange="updateValue(${index}, 'pillar', this.value)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${pillars.map(p =&gt; `&lt;option value="${p}" ${row.pillar === p ? 'selected' : ''}&gt;${p}&lt;/option&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select onchange="updateValue(${index}, 'platform', this.value)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${platforms.map(pl =&gt; `&lt;option value="${pl}" ${row.platform === pl ? 'selected' : ''}&gt;${pl}&lt;/option&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;textarea oninput="updateValue(${index}, 'caption', this.value)"&gt;${row.caption}&lt;/textarea&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="text" value="${row.visual}" onchange="updateValue(${index}, 'visual', this.value)"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select onchange="updateValue(${index}, 'status', this.value)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${statuses.map(s =&gt; `&lt;option value="${s}" ${row.status === s ? 'selected' : ''}&gt;${s}&lt;/option&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;textarea oninput="updateValue(${index}, 'notes', this.value)"&gt;${row.notes || ''}&lt;/textarea&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;button class="btn-delete" onclick="deleteRow(${index})"&gt;×&lt;/button&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tbody.appendChild(tr);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>calculateMetrics();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateValue(index, field, value) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>activeData[index][field] = value;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>calculateMetrics(); // Real-time calculation shifts</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function addNewRow() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>activeData.push({ day: `New Day ${activeData.length + 1}`, pillar: pillars[0], platform: platforms[0], caption: "", visual: "", status: statuses[0], notes: "" });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderTable();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function deleteRow(index) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(confirm("Are you sure you want to remove this scheduling row?")) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>activeData.splice(index, 1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderTable();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Advanced dynamic metrics calculator</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function calculateMetrics() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const totalRows = activeData.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(totalRows === 0) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const promoCount = activeData.filter(r =&gt; r.pillar === "Book Promotion 📖").length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const promoPercentage = Math.round((promoCount / totalRows) * 100);</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('balance-stat').innerText = `${promoPercentage}%`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('balance-bar').style.width = `${promoPercentage}%`;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const badge = document.getElementById('balance-badge');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (promoPercentage &lt;= 25) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>badge.innerText = "Balanced ✅";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>badge.style.backgroundColor = "var(--sage-light)";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>badge.innerText = "Heavy Promo ⚠️";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>badge.style.backgroundColor = "#FDF2F2";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const drafts = activeData.filter(r =&gt; r.status === "☐ Draft").length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const scheduled = activeData.filter(r =&gt; r.status === "🔄 Scheduled").length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const live = activeData.filter(r =&gt; r.status === "✅ Live").length;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('completion-stat').innerText = `${scheduled + live} / ${totalRows}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('status-breakdown').innerText = `Drafts: ${drafts} | Scheduled: ${scheduled} | Live: ${live}`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Find Top Pillar Focus</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const counts = {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>activeData.forEach(r =&gt; counts[r.pillar] = (counts[r.pillar] || 0) + 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const topPillar = Object.keys(counts).reduce((a, b) =&gt; counts[a] &gt; counts[b] ? a : b, pillars[0]);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('top-pillar').innerText = topPillar;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Collaboration Save File Generator</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function downloadBackup() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(activeData, null, 2));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const downloadAnchor = document.createElement('a');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>downloadAnchor.setAttribute("href", dataStr);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>downloadAnchor.setAttribute("download", "georgie_provence_workspace.json");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.appendChild(downloadAnchor);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>downloadAnchor.click();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>downloadAnchor.remove();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Collaboration Load File Processor</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function uploadBackup(event) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const file = event.target.files[0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!file) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reader = new FileReader();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>reader.onload = function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const parsed = JSON.parse(e.target.result);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (Array.isArray(parsed)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>activeData = parsed;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderTable();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>alert("Workspace updated successfully with the loaded files!");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert("Error reading file configuration. Ensure it's a valid dashboard backup.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>reader.readAsText(file);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// CSV Spreadsheet Exporter</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function exportToCSV() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let csvContent = "data:text/csv;charset=utf-8,Day/Date,Core Pillar,Platform,Caption,Visual Asset,Status,Coaching Notes\n";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>activeData.forEach(r =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const rowStr = [r.day, r.pillar, r.platform, `"${r.caption.replace(/"/g, '""')}"`, r.visual, r.status, `"${(r.notes || '').replace(/"/g, '""')}"`].join(",");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>csvContent += rowStr + "\n";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const encodedUri = encodeURI(csvContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const link = document.createElement("a");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.setAttribute("href", encodedUri);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.setAttribute("download", "bonne_vie_content_export.csv");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.appendChild(link);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.click();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.remove();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Trigger grid initialization</p>
+<p class="p1"><span class="Apple-converted-space">    </span>renderTable();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
