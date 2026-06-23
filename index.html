@@ -995,8 +995,10 @@
 
   function resetSandboxGrid() {
       state.plannerData = JSON.parse(JSON.stringify(initialPlannerData));
+        state.checklists = JSON.parse(JSON.stringify(initialChecklists));
       saveState();
       renderPlanner();
+        renderChecklists();
 }
 
   function calculatePlannerMetrics() {
