@@ -1,348 +1,555 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bonne Vie in Provence - Author Success Center</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-cream: #faf6f0;
-  --card-white: #ffffff;
-  --provence-gold: #d4af37;
-  --sage-green: #8a9a86;
-  --sage-deep: #2c3e2b;
-  --sage-light: #f0f4f1;
-  --lavender: #967bb6;
-  --lavender-light: #f5f0fb;
-  --text-dark: #333333;
-  --text-muted: #666666;
-  --border-color: #eae3d8;
-  --soft-shadow: 0 8px 24px rgba(44, 62, 43, 0.06);
-  --radius: 16px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--bg-cream);
-  color: var(--text-dark);
-  line-height: 1.6;
-  padding: 32px 20px;
-}
-.container { max-width: 1440px; margin: 0 auto; }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 20px;
-  margin-bottom: 24px;
-}
-.brand h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  color: var(--sage-deep);
-}
-.brand p {
-  font-size: 0.88rem;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
-  color: var(--provence-gold);
-  font-weight: 700;
-  margin-top: 6px;
-}
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-end;
-}
-button, .file-trigger {
-  font-family: inherit;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-.btn-secondary {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-dark);
-}
-.btn-secondary:hover, .tab-btn:hover {
-  background: #f3ece1;
-}
-.btn-primary {
-  background: var(--sage-deep);
-  color: white;
-}
-.btn-primary:hover { background: #3e573d; }
-.analytics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: 24px;
-}
-.card, .workspace-card, .panel-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  box-shadow: var(--soft-shadow);
-}
-.card { padding: 22px; }
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.card-title {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-  font-weight: 700;
-}
-.badge {
-  background: var(--sage-light);
-  color: var(--sage-deep);
-  padding: 5px 10px;
-  border-radius: 999px;
-  font-size: 0.74rem;
-  font-weight: 700;
-}
-.stat {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--sage-deep);
-  margin-bottom: 8px;
-}
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #ece8e1;
-  border-radius: 999px;
-  overflow: hidden;
-  margin-top: 12px;
-}
-.progress-fill {
-  height: 100%;
-  background: var(--sage-green);
-  width: 0;
-}
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.tab-btn {
-  background: var(--card-white);
-  border: 1px solid var(--border-color);
-  color: var(--text-dark);
-}
-.tab-btn.active {
-  background: var(--sage-deep);
-  color: white;
-  border-color: var(--sage-deep);
-}
-.panel { display: none; }
-.panel.active { display: block; }
-.workspace-card { padding: 28px; }
-.workspace-title-area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-.workspace-title-area h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--sage-deep);
-  font-size: 1.55rem;
-}
-.workspace-subtext {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  margin-bottom: 18px;
-}
-.table-responsive { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; text-align: left; }
-th {
-  background: #faf8f5;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 14px;
-  border-bottom: 2px solid var(--border-color);
-}
-td {
-  padding: 14px;
-  border-bottom: 1px solid var(--border-color);
-  vertical-align: top;
-}
-input[type="text"], select, textarea {
-  width: 100%;
-  border: 1px solid var(--border-color);
-  background: #fcfaf7;
-  border-radius: 10px;
-  padding: 10px;
-  font: inherit;
-  color: var(--text-dark);
-}
-textarea { min-height: 88px; resize: vertical; }
-input[type="text"]:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--sage-green);
-  background: #fff;
-}
-.day-label {
-  font-weight: 700;
-  color: var(--sage-deep);
-}
-.btn-delete {
-  background: transparent;
-  color: #b3261e;
-  padding: 4px 8px;
-  font-size: 1.2rem;
-}
-.panel-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 20px;
-}
-.panel-card { padding: 24px; }
-.panel-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.35rem;
-  color: var(--sage-deep);
-  margin-bottom: 6px;
-}
-.panel-card p.section-note {
-  color: var(--text-muted);
-  margin-bottom: 18px;
-  font-size: 0.94rem;
-}
-.checklist-group {
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-  padding: 18px;
-  margin-bottom: 16px;
-  background: #fffdfa;
-}
-.checklist-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-  align-items: center;
-}
-.checklist-title {
-  font-weight: 700;
-  color: var(--sage-deep);
-}
-.checklist-meta {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-.checklist-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 8px 0;
-  border-top: 1px solid #f2ede6;
-}
-.checklist-item:first-of-type { border-top: none; }
-.checklist-item input { margin-top: 4px; }
-.summary-list {
-  display: grid;
-  gap: 12px;
-}
-.summary-stat {
-  background: var(--sage-light);
-  border-radius: 14px;
-  padding: 16px;
-}
-.summary-stat strong {
-  display: block;
-  color: var(--sage-deep);
-  font-size: 1.35rem;
-}
-.prompt-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.prompt-toolbar input, .prompt-toolbar select {
-  max-width: 260px;
-}
-.prompt-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-.prompt-card {
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-  padding: 18px;
-  background: white;
-}
-.prompt-card h4 {
-  color: var(--sage-deep);
-  margin-bottom: 4px;
-}
-.prompt-tag {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--lavender-light);
-  color: #5e4b78;
-  font-size: 0.76rem;
-  font-weight: 700;
-}
-.prompt-text {
-  white-space: pre-wrap;
-  color: var(--text-dark);
-  font-size: 0.94rem;
-  margin-bottom: 14px;
-}
-.empty-state {
-  padding: 24px;
-  text-align: center;
-  color: var(--text-muted);
-  border: 1px dashed var(--border-color);
-  border-radius: 14px;
-  background: #fffdfa;
-}
-footer {
-  margin-top: 36px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 20px;
-}
-@media (max-width: 1120px) {
-  .analytics-grid, .panel-grid, .prompt-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 860px) {
-  header, .workspace-title-area { flex-direction: column; align-items: stretch; }
-  .actions { justify-content: flex-start; }
-  .analytics-grid, .panel-grid, .prompt-grid { grid-template-columns: 1fr; }
-  body { padding: 20px 14px; }
-  .workspace-card, .panel-card { padding: 18px; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bonne Vie in Provence - Author Success Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #FAF6F0;
+      --card-white: #FFFFFF;
+      --provence-gold: #D4AF37;
+      --sage-green: #8A9A86;
+      --sage-deep: #2C3E2B;
+      --sage-light: #F0F4F1;
+      --lavender: #967BB6;
+      --lavender-light: #F4EFFA;
+      --text-dark: #333333;
+      --text-muted: #666666;
+      --border-color: #EAE3D8;
+      --soft-shadow: 0 8px 24px rgba(44, 62, 43, 0.07);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 32px 20px;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .brand h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--sage-deep);
+    }
+
+    .brand p {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--provence-gold);
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-dark);
+    }
+
+    .btn-secondary:hover,
+    .tab-btn:hover {
+      background: #F3ECE1;
+    }
+
+    .btn-primary {
+      background: var(--sage-deep);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #3E573D;
+    }
+
+    .btn-soft {
+      background: var(--sage-light);
+      color: var(--sage-deep);
+    }
+
+    .btn-soft:hover {
+      background: #E5EDE7;
+    }
+
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .card,
+    .workspace-card,
+    .panel-card,
+    .hero-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .card {
+      padding: 22px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .badge {
+      background: var(--sage-light);
+      color: var(--sage-deep);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .stat {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--sage-deep);
+      margin-bottom: 8px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #ECE8E1;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--sage-green);
+      width: 0;
+      transition: width 0.25s ease;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      color: var(--text-dark);
+    }
+
+    .tab-btn.active {
+      background: var(--sage-deep);
+      color: white;
+      border-color: var(--sage-deep);
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .workspace-card,
+    .panel-card {
+      padding: 28px;
+    }
+
+    .workspace-title-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .workspace-title-area h2,
+    .panel-card h2,
+    .panel-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--sage-deep);
+    }
+
+    .workspace-title-area h2 {
+      font-size: 1.55rem;
+    }
+
+    .workspace-subtext,
+    .section-note {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      margin-top: 6px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #FFFDF9 0%, #F9F5EE 100%);
+    }
+
+    .hero-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #F3EAD7, #F9F4EA);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      background: #FAF8F5;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 14px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      background: #FCFAF7;
+      border-radius: 10px;
+      padding: 10px;
+      font: inherit;
+      color: var(--text-dark);
+    }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
+    }
+
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--sage-green);
+      background: #FFF;
+    }
+
+    .day-label {
+      font-weight: 700;
+      color: var(--sage-deep);
+    }
+
+    .btn-delete {
+      background: transparent;
+      color: #B3261E;
+      padding: 4px 8px;
+      font-size: 1.2rem;
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+    }
+
+    .checklist-group {
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+      background: #FFFDFA;
+    }
+
+    .checklist-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: center;
+    }
+
+    .checklist-title {
+      font-weight: 700;
+      color: var(--sage-deep);
+    }
+
+    .checklist-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-top: 1px solid #F2EDE6;
+    }
+
+    .checklist-item:first-of-type {
+      border-top: none;
+    }
+
+    .checklist-item input {
+      margin-top: 4px;
+    }
+
+    .checklist-item.done span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .summary-stat {
+      background: var(--sage-light);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .summary-stat strong {
+      display: block;
+      color: var(--sage-deep);
+      font-size: 1.35rem;
+    }
+
+    .success-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 14px;
+      background: #FFF7DF;
+      border: 1px solid #EFDFAA;
+      display: block;
+    }
+
+    .success-box h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--sage-deep);
+      margin-bottom: 4px;
+    }
+
+    .mini-list {
+      margin-top: 10px;
+      padding-left: 18px;
+      color: var(--text-muted);
+    }
+
+    .assistant-intro,
+    .custom-rule-box {
+      background: #FFFDFA;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .assistant-header {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .assistant-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: var(--lavender-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .rule-text {
+      background: #FCFAF7;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+
+    .prompt-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .prompt-toolbar input,
+    .prompt-toolbar select {
+      max-width: 300px;
+    }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .prompt-card {
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 18px;
+      background: white;
+    }
+
+    .prompt-number {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .prompt-text {
+      white-space: pre-wrap;
+      color: var(--text-dark);
+      font-size: 0.94rem;
+      margin-bottom: 14px;
+    }
+
+    .empty-state {
+      padding: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      border: 1px dashed var(--border-color);
+      border-radius: 14px;
+      background: #FFFDFA;
+    }
+
+    footer {
+      margin-top: 36px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 1120px) {
+      .analytics-grid,
+      .panel-grid,
+      .prompt-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      header,
+      .workspace-title-area,
+      .hero-card {
+        flex-direction: column;
+        display: flex;
+      }
+
+      .hero-icon {
+        width: 100%;
+        height: 90px;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+
+      .analytics-grid,
+      .panel-grid,
+      .prompt-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 20px 14px;
+      }
+
+      .workspace-card,
+      .panel-card {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="container">
@@ -352,9 +559,10 @@ footer {
       <p>HeartWork Creative • Author Success Center & Sandbox</p>
     </div>
     <div class="actions">
-      <button class="btn-secondary" onclick="exportToCSV()">Export Planner CSV</button>
+      <button class="btn-secondary" onclick="resetSandboxGrid()">Reset Sandbox Grid</button>
+      <button class="btn-secondary" onclick="exportToCSV()">Export to Sheets (CSV)</button>
       <button class="btn-secondary" onclick="downloadBackup()">Download Full Backup</button>
-      <button class="btn-primary" onclick="document.getElementById('uploadInput').click()">Upload Backup</button>
+      <button class="btn-primary" onclick="document.getElementById('uploadInput').click()">Upload Coach/Client File</button>
       <input type="file" id="uploadInput" style="display:none" onchange="uploadBackup(event)" accept=".json">
     </div>
   </header>
@@ -366,51 +574,55 @@ footer {
         <span class="badge" id="balance-badge">Balanced ✅</span>
       </div>
       <div class="stat" id="balance-stat">0%</div>
-      <p style="font-size:0.88rem; color:var(--text-muted);">Tracks how much of the content mix is promotion versus connection-led storytelling.</p>
+      <p style="font-size:.88rem;color:var(--text-muted);">Tracks how much of the content mix leans toward connection versus direct promotion.</p>
       <div class="progress-bar"><div class="progress-fill" id="balance-bar"></div></div>
     </div>
+
     <div class="card">
       <div class="card-header">
         <span class="card-title">Plan Completion</span>
         <span class="badge">Sandbox State</span>
       </div>
       <div class="stat" id="completion-stat">0 / 0</div>
-      <p style="font-size:0.88rem; color:var(--text-muted);" id="status-breakdown">Drafts: 0 | Scheduled: 0 | Live: 0</p>
+      <p style="font-size:.88rem;color:var(--text-muted);" id="status-breakdown">Drafts: 0 | Scheduled: 0 | Live: 0</p>
     </div>
+
     <div class="card">
       <div class="card-header">
         <span class="card-title">Top Content Pillar</span>
         <span class="badge">Focus Map</span>
       </div>
-      <div class="stat" style="font-size:1.35rem; padding-top:8px;" id="top-pillar">—</div>
-      <p style="font-size:0.88rem; color:var(--text-muted);">Shows the theme receiving the strongest emphasis across the current plan.</p>
+      <div class="stat" id="top-pillar" style="font-size:1.35rem;padding-top:8px;">—</div>
+      <p style="font-size:.88rem;color:var(--text-muted);">Shows the theme receiving the strongest emphasis across the current plan.</p>
     </div>
+
     <div class="card">
       <div class="card-header">
         <span class="card-title">Checklist Progress</span>
         <span class="badge">Daily Rhythm</span>
       </div>
       <div class="stat" id="checklist-progress-stat">0%</div>
-      <p style="font-size:0.88rem; color:var(--text-muted);" id="checklist-summary">0 of 0 checklist items completed.</p>
+      <p style="font-size:.88rem;color:var(--text-muted);" id="checklist-summary">0 of 0 checklist items completed.</p>
       <div class="progress-bar"><div class="progress-fill" id="checklist-progress-bar"></div></div>
     </div>
   </section>
 
   <nav class="tabs" aria-label="Workspace sections">
-    <button class="tab-btn active" data-tab="planner">30-Day Sandbox Grid</button>
-    <button class="tab-btn" data-tab="checklists">Interactive Checklists</button>
-    <button class="tab-btn" data-tab="vault">AI Prompt Vault</button>
+    <button class="tab-btn active" data-tab="planner">📝 30-Day Sandbox Grid</button>
+    <button class="tab-btn" data-tab="checklists">✅ Interactive Checklists</button>
+    <button class="tab-btn" data-tab="vault">🤖 AI Prompt Vault</button>
   </nav>
 
   <section class="panel active" id="planner-panel">
     <div class="workspace-card">
       <div class="workspace-title-area">
         <div>
-          <h2>📝 Georgie's Content Planning Workspace</h2>
-          <p class="workspace-subtext">Plan daily posts, track publishing status, and keep client notes in one editable content sandbox.</p>
+          <h2>Content Planning Workspace</h2>
+          <p class="workspace-subtext">Build, revise, and schedule the full 30-day content map with coaching notes and posting status.</p>
         </div>
         <button class="btn-primary" onclick="addNewRow()">+ Add Custom Day Row</button>
       </div>
+
       <div class="table-responsive">
         <table>
           <thead>
@@ -432,425 +644,593 @@ footer {
   </section>
 
   <section class="panel" id="checklists-panel">
+    <div class="hero-card">
+      <div class="hero-icon">🌅</div>
+      <div>
+        <h2 style="font-family:'Playfair Display',serif;color:#2c3e2b;margin-bottom:6px;">Daily and Weekly Rhythm</h2>
+        <p class="section-note">This tab includes the visible checklist system described in the Gemini build, including the daily routine, weekly milestones, progress bars, and success confirmation. [page:19]</p>
+      </div>
+    </div>
+
     <div class="panel-grid">
       <div class="panel-card">
-        <h3>✅ Interactive Checklists</h3>
-        <p class="section-note">Use these daily and weekly checklists to keep content production, engagement, and launch support moving forward.</p>
+        <h3>Interactive Checklists</h3>
+        <p class="section-note">Mark off each recurring action as it is completed.</p>
         <div id="checklists-container"></div>
+        <div id="success-box" class="success-box">
+          <h4>✨ Success Message!</h4>
+          <p>Celebrate every small completion. Consistency builds author visibility and reader trust.</p>
+        </div>
       </div>
+
       <div class="panel-card">
         <h3>Progress Snapshot</h3>
-        <p class="section-note">A quick overview of how much has been completed across the built-in checklist system.</p>
+        <p class="section-note">A quick overview of completion, next focus, and coaching rhythm.</p>
         <div class="summary-list">
           <div class="summary-stat"><span>Total checklist items</span><strong id="summary-total-items">0</strong></div>
           <div class="summary-stat"><span>Completed items</span><strong id="summary-completed-items">0</strong></div>
           <div class="summary-stat"><span>Groups on track</span><strong id="summary-groups-on-track">0</strong></div>
-          <div class="summary-stat"><span>Next focus</span><strong id="summary-next-focus" style="font-size:1rem; line-height:1.4;">Start the first unfinished checklist.</strong></div>
+          <div class="summary-stat"><span>Next focus</span><strong id="summary-next-focus" style="font-size:1rem;line-height:1.4;">Start the first unfinished checklist.</strong></div>
         </div>
+        <ul class="mini-list">
+          <li>Use the daily checklist during coffee or morning admin time.</li>
+          <li>Use the weekly checklist during planning and scheduling sessions.</li>
+          <li>Use prompt-vault outreach templates to support weekly visibility tasks.</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="panel" id="vault-panel">
     <div class="panel-card">
-      <h3>🧠 AI Prompt Vault</h3>
-      <p class="section-note">Copy-ready prompts for storytelling, book promotion, engagement, visuals, and repurposing across platforms.</p>
-      <div class="prompt-toolbar">
-        <input type="text" id="prompt-search" placeholder="Search prompts by keyword" />
-        <select id="prompt-category-filter">
-          <option value="All">All categories</option>
-        </select>
+      <div class="assistant-intro">
+        <div class="assistant-header">
+          <div class="assistant-icon">🤖</div>
+          <div>
+            <h3>Your AI Assistant</h3>
+            <p class="section-note">Think of AI as your friendly marketing intern. Copy and paste these exact prompts into ChatGPT or Claude to draft social captions, newsletters, or emails quickly. This structure is explicitly described in the Gemini page. [page:19]</p>
+          </div>
+        </div>
       </div>
+
+      <div class="custom-rule-box">
+        <h4>STEP 1: CUSTOM RULE (PASTE FIRST)</h4>
+        <p class="section-note">Paste this statement first in a new chat to let ChatGPT learn who you are and establish a warm, authentic tone. The Gemini page explicitly shows this Prompt Vault flow. [page:19]</p>
+        <div class="rule-text" id="custom-instruction-text"></div>
+        <button class="btn-soft" style="margin-top:12px;" onclick="copyCustomInstruction()">Copy Custom Instruction</button>
+      </div>
+
+      <h2>Ready-to-Use Prompts</h2>
+      <p class="section-note">Select a category, copy the prompt, and drop it into ChatGPT.</p>
+
+      <div class="prompt-toolbar">
+        <select id="prompt-category-filter"></select>
+        <input type="text" id="prompt-search" placeholder="Search prompts by keyword">
+      </div>
+
       <div class="prompt-grid" id="prompt-grid"></div>
       <div class="empty-state" id="prompt-empty" style="display:none;">No prompts match this search yet. Try a different keyword or category.</div>
     </div>
   </section>
 
   <footer>
-    © 2026 HeartWork Creative • Dedicated Beta Program Toolkit for Georgie Grossman & “Bonne Vie in Provence” • Built in collaboration with Ronda Taylor.
+    © 2026 HeartWork Creative • Dedicated Beta Program Toolkit for Georgie Grossman & “Bonne Vie in Provence” • Built in Collaboration with Ronda Taylor. All Rights Reserved.
   </footer>
 </div>
 
 <script>
-const storageKey = 'bonneVieAuthorCenterData_v2';
+  const storageKey = 'bonneVieAuthorCenterData_standalone';
+  const customInstruction = "I am Georgie Grossman, author of Bonne Vie in Provence, a feel-good novel about friendship, healing, second chances, and life in southern France. I want your help creating social media posts that feel warm, inspiring, and authentic. Always write in a welcoming, cozy, and descriptive tone that avoids hype or salesy cliches.";
 
-const initialPlannerData = [
-  { day: 'Day 1 - Monday', pillar: 'Provence State of Mind 🌿', platform: 'Facebook Only', caption: 'Have you ever wondered where a story begins? For Wendy, it started with a single step into an unknown landscape. For me, it began with an enduring love of France. Writing this book reminded me that sometimes our true path finds us when we least expect it. Have you ever taken a leap of faith into a new chapter of life?', visual: 'Book + Coffee Mockup', status: '🔄 Scheduled', notes: 'Perfect introductory connection post, Georgie! Let\'s get an early reading photo ready for this.' },
-  { day: 'Day 2 - Tuesday', pillar: 'Provence State of Mind 🌿', platform: 'Facebook + Instagram', caption: 'Provence is not just a place on a map; it is a sensory sanctuary. It is the scent of rosemary warmed by the sun, the slow rhythm of village markets, and the peace of a stone cottage at sundown. Here is one of my favorite corners of France. Do you prefer active vacations, or slow, restful escapes?', visual: 'Lavender Fields Graphic', status: '🔄 Scheduled', notes: 'Try using the sage green overlay for this photo graphic in Canva.' },
-  { day: 'Day 3 - Wednesday', pillar: 'Chosen Friendships 💜', platform: 'Instagram Only', caption: 'Meet Wendy, the heartbeat of Bonne Vie in Provence. She did not expect her life to transform, but she found chosen friends who reflected her true self back to her. In our adult lives, friendships are often our deepest anchors. Tag a dear friend who has stood by you through life\'s unexpected turns.', visual: 'Meet the Character Graphic', status: '🔄 Scheduled', notes: 'Schedule this on Instagram to build visual excitement around the cast.' },
-  { day: 'Day 4 - Thursday', pillar: 'Healing & Growth 🏡', platform: 'Facebook + Instagram', caption: 'In Bonne Vie in Provence, the villa is more than brick and stone; it is a safe harbor where hearts find room to heal. We all need a quiet space to mend and catch our breath. Where is your favorite personal retreat when life gets too busy?', visual: 'Cozy Quote Card', status: '☐ Draft', notes: 'Keep the visual warm and elegant.' },
-  { day: 'Day 5 - Friday', pillar: 'Book Promotion 📖', platform: 'Facebook + Instagram', caption: 'If you are looking for a heartwarming escape filled with friendship, emotional healing, beautiful French scenery, and second chances, I would love to welcome you to the community. Bonne Vie in Provence is now available in soft cover or digital eBook. Find your copy through the link in my bio.', visual: 'EPUB Stack Promo Image', status: '☐ Draft', notes: 'This is the 20 percent promotion post. Keep it simple, clear, and elegant.' },
-  { day: 'Day 6 - Saturday', pillar: 'Provence State of Mind 🌿', platform: 'Pinterest Only', caption: 'Taking the slow road through southern France. Let\'s wander down cobblestone pathways, seek out fresh lavender honey, and remember to live fully in the present moment. #ProvenceLiving #SlowLiving', visual: 'French Village Alleyway', status: '☐ Draft', notes: 'Pinterest-focused and very visual.' },
-  { day: 'Day 7 - Sunday', pillar: 'Healing & Growth 🏡', platform: 'Goodreads Update', caption: 'Hello Goodreads friends. This week I have been thinking about the courage it takes to leave comfortable shores behind in search of true transformation. What are you reading to feed your soul this Sunday?', visual: 'Review Highlight Graphic', status: '☐ Draft', notes: 'Excellent Goodreads connection post.' }
-];
+  const initialPlannerData = [
+    {
+      day: "Day 1 - Monday",
+      pillar: "Provence State of Mind 🌿",
+      platform: "Facebook Only",
+      caption: "Have you ever wondered where a story begins? For Wendy, it started with a single step into an unknown landscape. For me, it began with an enduring love of France. Writing this book reminded me that sometimes our true path finds us when we least expect it. Have you ever taken a leap of faith into a new chapter of life?",
+      visual: "Book + Coffee Mockup",
+      status: "🔄 Scheduled",
+      notes: "Perfect introductory connection post, Georgie! Let's get an early reading photo ready for this."
+    },
+    {
+      day: "Day 2 - Tuesday",
+      pillar: "Provence State of Mind 🌿",
+      platform: "Facebook + Instagram",
+      caption: "Provence is not just a place on a map; it is a sensory sanctuary. It is the scent of rosemary warmed by the sun, the slow rhythm of village markets, and the peace of a stone cottage at sundown. Here is one of my favorite corners of France. Do you prefer active vacations, or slow, restful escapes?",
+      visual: "Lavender Fields Graphic",
+      status: "🔄 Scheduled",
+      notes: "Try using the sage green overlay for this photo graphic in Canva."
+    },
+    {
+      day: "Day 3 - Wednesday",
+      pillar: "Chosen Friendships 💜",
+      platform: "Instagram Only",
+      caption: "Meet Wendy, the heartbeat of Bonne Vie in Provence. She did not expect her life to transform, but she found chosen friends who reflected her true self back to her. In our adult lives, friendships are often our deepest anchors. Tag a dear friend who has stood by you through life's unexpected turns.",
+      visual: "Meet the Character Graphic",
+      status: "🔄 Scheduled",
+      notes: "Schedule this on Instagram to build visual excitement around the cast."
+    },
+    {
+      day: "Day 4 - Thursday",
+      pillar: "Healing & Growth 🏡",
+      platform: "Facebook + Instagram",
+      caption: "In Bonne Vie in Provence, the villa is more than brick and stone; it is a safe harbor where hearts find room to heal. We all need a quiet space to mend and catch our breath. Where is your favorite personal retreat when life gets too busy?",
+      visual: "Cozy Quote Card",
+      status: "☐ Draft",
+      notes: "Keep the visual warm and elegant."
+    },
+    {
+      day: "Day 5 - Friday",
+      pillar: "Book Promotion 📖",
+      platform: "Facebook + Instagram",
+      caption: "If you are looking for a heartwarming escape filled with friendship, emotional healing, beautiful French scenery, and second chances, I would love to welcome you to the community. Bonne Vie in Provence is now available in soft cover or digital eBook. Find your copy through the link in my bio.",
+      visual: "EPUB Stack Promo Image",
+      status: "☐ Draft",
+      notes: "This is the 20 percent promotion post. Keep it simple, clear, and elegant."
+    },
+    {
+      day: "Day 6 - Saturday",
+      pillar: "Provence State of Mind 🌿",
+      platform: "Pinterest Only",
+      caption: "Taking the slow road through southern France. Let's wander down cobblestone pathways, seek out fresh lavender honey, and remember to live fully in the present moment. #ProvenceLiving #SlowLiving",
+      visual: "French Village Alleyway",
+      status: "☐ Draft",
+      notes: "Pinterest-focused and very visual."
+    },
+    {
+      day: "Day 7 - Sunday",
+      pillar: "Healing & Growth 🏡",
+      platform: "Goodreads Update",
+      caption: "Hello Goodreads friends. This week I have been thinking about the courage it takes to leave comfortable shores behind in search of true transformation. What are you reading to feed your soul this Sunday?",
+      visual: "Review Highlight Graphic",
+      status: "☐ Draft",
+      notes: "Excellent Goodreads connection post."
+    }
+  ];
 
-const initialChecklists = [
-  {
-    title: 'Daily 15-Minute Connection Habit',
-    cadence: 'Daily',
-    items: [
-      { text: 'Reply to comments and DMs with warmth and specificity.', done: false },
-      { text: 'Leave 3 thoughtful comments on aligned accounts.', done: false },
-      { text: 'Share one behind-the-scenes thought, quote, or reflection.', done: false },
-      { text: 'Review one scheduled post for tone and clarity.', done: false }
+  const initialChecklists = [
+    {
+      title: "The Daily 15-Minute Connection Habit",
+      cadence: "Daily Routine",
+      progressLabel: "Daily Routine Progress",
+      items: [
+        {
+          text: "The 5-Minute Morning Wave — Open Facebook/Instagram pages, answer notifications, and reply warmly to any comments or direct messages from readers.",
+          done: false
+        },
+        {
+          text: "The 5-Minute Goodreads Check — Log into Goodreads. Check for notifications, accept pending friend requests, or update your shelves with books you are reading.",
+          done: false
+        },
+        {
+          text: "The 5-Minute Community Seed — Read a post in a travel, France, or book club Facebook group. Leave a supportive, helpful comment without pitching your book.",
+          done: false
+        }
+      ]
+    },
+    {
+      title: "The Weekly Production Checklist",
+      cadence: "Weekly Milestones",
+      progressLabel: "Weekly Task Progress",
+      items: [
+        {
+          text: "Draft 3 Social Media Captions — Write captions using the rotating themes (Pillars) in your Sandbox grid workspace on Tab 1.",
+          done: false
+        },
+        {
+          text: "Select Canva Graphic — Pick one quote card or book mockup graphic template inside your Canva shared assets.",
+          done: false
+        },
+        {
+          text: "Schedule inside Meta Business Suite — Batch and schedule all 3 posts inside Meta Business Suite for the entire week ahead.",
+          done: false
+        },
+        {
+          text: "Reach Out to One Community — Send an inquiry to a book club, library, or online interest group using the outreach templates on Tab 3.",
+          done: false
+        }
+      ]
+    }
+  ];
+
+  const promptVault = {
+    "Behind the Book 📖": [
+      "Using my novel, help me write a Facebook post about what inspired me to write this story.",
+      "Write a social media post about the travel experiences that inspired my novel.",
+      "Help me explain why Provence became such an important setting in my story.",
+      "Write a post about the lessons I learned while writing this book.",
+      "Create a post describing how my personal experiences influenced the story."
+    ],
+    "Character Highlights 💜": [
+      "Help me write a warm post introducing one of the key characters in Bonne Vie in Provence.",
+      "Create a post about how friendship shapes the emotional heart of my novel.",
+      "Write a character spotlight that highlights personal growth and second chances.",
+      "Help me describe why readers may connect with Wendy at this stage of life.",
+      "Write a social post about the chosen-family theme in my story."
+    ],
+    "Provence & Travel 🌿": [
+      "Write a social media caption about the beauty and atmosphere of Provence in my novel.",
+      "Help me describe the sensory details of southern France in a cozy, inviting tone.",
+      "Create a post about why readers who love travel fiction may enjoy this book.",
+      "Write a post comparing everyday life in Provence to the slower life many women crave.",
+      "Help me create a caption inspired by markets, lavender, stone cottages, and French village life."
+    ],
+    "Reader Engagement 💬": [
+      "Write five comment-friendly questions I can ask readers about friendship and fresh starts.",
+      "Help me create a post that invites women to share the place they most long to escape to.",
+      "Write an engagement caption asking readers about the friendships that changed their lives.",
+      "Create a warm discussion post about second chances in midlife.",
+      "Help me write a post inviting readers to share what books feel like an emotional retreat."
+    ],
+    "Book Promotion 📣": [
+      "Write a gentle promotional post inviting readers to discover Bonne Vie in Provence.",
+      "Create a launch caption that highlights friendship, healing, and French atmosphere without sounding pushy.",
+      "Help me write a post about why this book makes a lovely gift for women who enjoy uplifting fiction.",
+      "Write a short promo caption for Facebook that includes a soft call to action and a cozy tone.",
+      "Create a post that describes the emotional experience readers can expect from the book."
     ]
-  },
-  {
-    title: 'Weekly Content Production Checklist',
-    cadence: 'Weekly',
-    items: [
-      { text: 'Draft at least 3 connection posts and 1 promotional post.', done: false },
-      { text: 'Prepare graphics or photo selections for the week.', done: false },
-      { text: 'Schedule upcoming posts across target platforms.', done: false },
-      { text: 'Review analytics and identify one content lesson.', done: false }
-    ]
-  },
-  {
-    title: 'Launch Visibility Checklist',
-    cadence: 'As Needed',
-    items: [
-      { text: 'Update the buy link and landing page placement.', done: false },
-      { text: 'Refresh pinned content or profile featured post.', done: false },
-      { text: 'Collect or request one testimonial, review, or reader quote.', done: false },
-      { text: 'Repurpose one existing post into a new format.', done: false }
-    ]
-  }
-];
-
-const promptVault = [
-  {
-    title: 'Storytelling Caption Builder',
-    category: 'Caption Writing',
-    prompt: 'Write a warm, reflective social media caption for my novel Bonne Vie in Provence. Use a graceful, emotionally intelligent voice. Start with a relatable life reflection, connect it to one theme from the book, and end with a gentle engagement question. Keep it under 180 words.'
-  },
-  {
-    title: 'Soft Promotion Post',
-    category: 'Book Promotion',
-    prompt: 'Create a book promotion caption that feels inviting rather than salesy. Mention the emotional experience readers will have, include one sensory detail about Provence, and finish with a calm call to action to learn more or get a copy.'
-  },
-  {
-    title: 'Instagram Carousel Prompt',
-    category: 'Content Repurposing',
-    prompt: 'Turn this excerpt or idea into a 7-slide Instagram carousel. Give me a hook for slide 1, a clear emotional progression for slides 2 through 6, and a thoughtful final CTA for slide 7. Keep the language elegant and reader-focused.'
-  },
-  {
-    title: 'Reader Engagement Question',
-    category: 'Engagement',
-    prompt: 'Generate 10 audience engagement questions inspired by themes of second chances, friendship, healing, travel, and starting over in midlife. Make them thoughtful, conversational, and ideal for Facebook or Instagram comments.'
-  },
-  {
-    title: 'Visual Prompt for Canva or AI Art',
-    category: 'Visual Direction',
-    prompt: 'Create a refined visual direction prompt for a social graphic inspired by southern France. Include mood, palette, texture, styling details, and composition suggestions that feel elegant, warm, literary, and feminine without looking generic.'
-  },
-  {
-    title: 'Email Newsletter Teaser',
-    category: 'Email Marketing',
-    prompt: 'Write a short newsletter teaser for subscribers about Bonne Vie in Provence. Make it feel intimate and personal. Include a hint of travel, emotional renewal, and friendship, and encourage readers to click through for the full update.'
-  },
-  {
-    title: 'Goodreads Update Draft',
-    category: 'Platform Specific',
-    prompt: 'Draft a Goodreads update that sounds thoughtful and literary. Mention a writing reflection, a favorite theme from the book, and one question for fellow readers that invites conversation.'
-  },
-  {
-    title: 'Review Request Message',
-    category: 'Reader Outreach',
-    prompt: 'Write a gracious message asking readers for an honest review of Bonne Vie in Provence. Keep it heartfelt, appreciative, and easy to personalize for email or direct message.'
-  }
-];
-
-const pillars = ['Provence State of Mind 🌿', 'Second Chances ✨', 'Chosen Friendships 💜', 'Healing & Growth 🏡', 'Book Promotion 📖'];
-const platforms = ['Facebook Only', 'Instagram Only', 'Facebook + Instagram', 'Goodreads Update', 'Pinterest Only'];
-const statuses = ['☐ Draft', '🔄 Scheduled', '✅ Live'];
-
-function getDefaultState() {
-  return {
-    plannerData: initialPlannerData,
-    checklists: initialChecklists,
-    promptVault
   };
-}
 
-function loadState() {
-  try {
-    const saved = localStorage.getItem(storageKey);
-    if (!saved) return getDefaultState();
-    const parsed = JSON.parse(saved);
+  const pillars = [
+    "Provence State of Mind 🌿",
+    "Second Chances ✨",
+    "Chosen Friendships 💜",
+    "Healing & Growth 🏡",
+    "Book Promotion 📖"
+  ];
+
+  const platforms = [
+    "Facebook Only",
+    "Instagram Only",
+    "Facebook + Instagram",
+    "Goodreads Update",
+    "Pinterest Only"
+  ];
+
+  const statuses = [
+    "☐ Draft",
+    "🔄 Scheduled",
+    "✅ Live"
+  ];
+
+  function getDefaultState() {
     return {
-      plannerData: Array.isArray(parsed.plannerData) ? parsed.plannerData : initialPlannerData,
-      checklists: Array.isArray(parsed.checklists) ? parsed.checklists : initialChecklists,
-      promptVault: Array.isArray(parsed.promptVault) ? parsed.promptVault : promptVault
+      plannerData: JSON.parse(JSON.stringify(initialPlannerData)),
+      checklists: JSON.parse(JSON.stringify(initialChecklists)),
+      selectedPromptCategory: "Behind the Book 📖"
     };
-  } catch (e) {
-    return getDefaultState();
   }
-}
 
-let state = loadState();
+  function loadState() {
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (!saved) return getDefaultState();
+      const parsed = JSON.parse(saved);
+      return {
+        plannerData: Array.isArray(parsed.plannerData) ? parsed.plannerData : getDefaultState().plannerData,
+        checklists: Array.isArray(parsed.checklists) ? parsed.checklists : getDefaultState().checklists,
+        selectedPromptCategory: parsed.selectedPromptCategory || "Behind the Book 📖"
+      };
+    } catch (e) {
+      return getDefaultState();
+    }
+  }
 
-function saveState() {
-  localStorage.setItem(storageKey, JSON.stringify(state));
-}
+  let state = loadState();
 
-function escapeHtml(str) {
-  return String(str ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
+  function saveState() {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  }
 
-function renderPlanner() {
-  const tbody = document.getElementById('sandbox-tbody');
-  tbody.innerHTML = '';
-  state.plannerData.forEach((row, index) => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td><input type="text" class="day-label" value="${escapeHtml(row.day)}" onchange="updatePlannerValue(${index}, 'day', this.value)"></td>
-      <td>
-        <select onchange="updatePlannerValue(${index}, 'pillar', this.value)">
-          ${pillars.map(p => `<option value="${escapeHtml(p)}" ${row.pillar === p ? 'selected' : ''}>${escapeHtml(p)}</option>`).join('')}
-        </select>
-      </td>
-      <td>
-        <select onchange="updatePlannerValue(${index}, 'platform', this.value)">
-          ${platforms.map(p => `<option value="${escapeHtml(p)}" ${row.platform === p ? 'selected' : ''}>${escapeHtml(p)}</option>`).join('')}
-        </select>
-      </td>
-      <td><textarea oninput="updatePlannerValue(${index}, 'caption', this.value)">${escapeHtml(row.caption)}</textarea></td>
-      <td><input type="text" value="${escapeHtml(row.visual)}" onchange="updatePlannerValue(${index}, 'visual', this.value)"></td>
-      <td>
-        <select onchange="updatePlannerValue(${index}, 'status', this.value)">
-          ${statuses.map(s => `<option value="${escapeHtml(s)}" ${row.status === s ? 'selected' : ''}>${escapeHtml(s)}</option>`).join('')}
-        </select>
-      </td>
-      <td><textarea oninput="updatePlannerValue(${index}, 'notes', this.value)">${escapeHtml(row.notes || '')}</textarea></td>
-      <td><button class="btn-delete" onclick="deleteRow(${index})">×</button></td>
-    `;
-    tbody.appendChild(tr);
-  });
-  calculatePlannerMetrics();
-}
+  function escapeHtml(str) {
+    return String(str ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
 
-function updatePlannerValue(index, field, value) {
-  state.plannerData[index][field] = value;
-  saveState();
-  calculatePlannerMetrics();
-}
+  function renderPlanner() {
+    const tbody = document.getElementById('sandbox-tbody');
+    tbody.innerHTML = '';
 
-function addNewRow() {
-  state.plannerData.push({ day: `New Day ${state.plannerData.length + 1}`, pillar: pillars[0], platform: platforms[0], caption: '', visual: '', status: statuses[0], notes: '' });
-  saveState();
-  renderPlanner();
-}
+    state.plannerData.forEach((row, index) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><input type="text" class="day-label" value="${escapeHtml(row.day)}" onchange="updatePlannerValue(${index}, 'day', this.value)"></td>
+        <td>
+          <select onchange="updatePlannerValue(${index}, 'pillar', this.value)">
+            ${pillars.map(p => `<option value="${escapeHtml(p)}" ${row.pillar === p ? 'selected' : ''}>${escapeHtml(p)}</option>`).join('')}
+          </select>
+        </td>
+        <td>
+          <select onchange="updatePlannerValue(${index}, 'platform', this.value)">
+            ${platforms.map(p => `<option value="${escapeHtml(p)}" ${row.platform === p ? 'selected' : ''}>${escapeHtml(p)}</option>`).join('')}
+          </select>
+        </td>
+        <td><textarea oninput="updatePlannerValue(${index}, 'caption', this.value)">${escapeHtml(row.caption)}</textarea></td>
+        <td><input type="text" value="${escapeHtml(row.visual)}" onchange="updatePlannerValue(${index}, 'visual', this.value)"></td>
+        <td>
+          <select onchange="updatePlannerValue(${index}, 'status', this.value)">
+            ${statuses.map(s => `<option value="${escapeHtml(s)}" ${row.status === s ? 'selected' : ''}>${escapeHtml(s)}</option>`).join('')}
+          </select>
+        </td>
+        <td><textarea oninput="updatePlannerValue(${index}, 'notes', this.value)">${escapeHtml(row.notes || '')}</textarea></td>
+        <td><button class="btn-delete" onclick="deleteRow(${index})">×</button></td>
+      `;
+      tbody.appendChild(tr);
+    });
 
-function deleteRow(index) {
-  if (confirm('Are you sure you want to remove this scheduling row?')) {
-    state.plannerData.splice(index, 1);
+    calculatePlannerMetrics();
+  }
+
+  function updatePlannerValue(index, field, value) {
+    state.plannerData[index][field] = value;
+    saveState();
+    calculatePlannerMetrics();
+  }
+
+  function addNewRow() {
+    state.plannerData.push({
+      day: `New Day ${state.plannerData.length + 1}`,
+      pillar: pillars[0],
+      platform: platforms[0],
+      caption: '',
+      visual: '',
+      status: statuses[0],
+      notes: ''
+    });
     saveState();
     renderPlanner();
   }
-}
 
-function calculatePlannerMetrics() {
-  const totalRows = state.plannerData.length || 1;
-  const promoCount = state.plannerData.filter(r => r.pillar === 'Book Promotion 📖').length;
-  const promoPercentage = Math.round((promoCount / totalRows) * 100);
-  document.getElementById('balance-stat').innerText = `${promoPercentage}%`;
-  document.getElementById('balance-bar').style.width = `${promoPercentage}%`;
-  const badge = document.getElementById('balance-badge');
-  if (promoPercentage <= 25) {
-    badge.innerText = 'Balanced ✅';
-    badge.style.backgroundColor = 'var(--sage-light)';
-  } else {
-    badge.innerText = 'Heavy Promo ⚠️';
-    badge.style.backgroundColor = '#fdf2f2';
-  }
-
-  const drafts = state.plannerData.filter(r => r.status === '☐ Draft').length;
-  const scheduled = state.plannerData.filter(r => r.status === '🔄 Scheduled').length;
-  const live = state.plannerData.filter(r => r.status === '✅ Live').length;
-  document.getElementById('completion-stat').innerText = `${scheduled + live} / ${state.plannerData.length}`;
-  document.getElementById('status-breakdown').innerText = `Drafts: ${drafts} | Scheduled: ${scheduled} | Live: ${live}`;
-
-  const counts = {};
-  state.plannerData.forEach(r => counts[r.pillar] = (counts[r.pillar] || 0) + 1);
-  const topPillar = Object.keys(counts).length ? Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b) : '—';
-  document.getElementById('top-pillar').innerText = topPillar;
-}
-
-function renderChecklists() {
-  const container = document.getElementById('checklists-container');
-  container.innerHTML = '';
-  state.checklists.forEach((group, groupIndex) => {
-    const completed = group.items.filter(item => item.done).length;
-    const wrapper = document.createElement('div');
-    wrapper.className = 'checklist-group';
-    wrapper.innerHTML = `
-      <div class="checklist-head">
-        <div>
-          <div class="checklist-title">${escapeHtml(group.title)}</div>
-          <div class="checklist-meta">${escapeHtml(group.cadence)} • ${completed} of ${group.items.length} complete</div>
-        </div>
-        <span class="badge">${Math.round((completed / group.items.length) * 100) || 0}%</span>
-      </div>
-      ${group.items.map((item, itemIndex) => `
-        <label class="checklist-item">
-          <input type="checkbox" ${item.done ? 'checked' : ''} onchange="toggleChecklistItem(${groupIndex}, ${itemIndex}, this.checked)">
-          <span>${escapeHtml(item.text)}</span>
-        </label>
-      `).join('')}
-    `;
-    container.appendChild(wrapper);
-  });
-  calculateChecklistMetrics();
-}
-
-function toggleChecklistItem(groupIndex, itemIndex, checked) {
-  state.checklists[groupIndex].items[itemIndex].done = checked;
-  saveState();
-  renderChecklists();
-}
-
-function calculateChecklistMetrics() {
-  const allItems = state.checklists.flatMap(group => group.items);
-  const total = allItems.length;
-  const completed = allItems.filter(item => item.done).length;
-  const percent = total ? Math.round((completed / total) * 100) : 0;
-  document.getElementById('checklist-progress-stat').innerText = `${percent}%`;
-  document.getElementById('checklist-progress-bar').style.width = `${percent}%`;
-  document.getElementById('checklist-summary').innerText = `${completed} of ${total} checklist items completed.`;
-  document.getElementById('summary-total-items').innerText = total;
-  document.getElementById('summary-completed-items').innerText = completed;
-  const groupsOnTrack = state.checklists.filter(group => group.items.every(item => item.done)).length;
-  document.getElementById('summary-groups-on-track').innerText = groupsOnTrack;
-  const nextGroup = state.checklists.find(group => group.items.some(item => !item.done));
-  document.getElementById('summary-next-focus').innerText = nextGroup ? nextGroup.title : 'Everything is complete. Great work.';
-}
-
-function populatePromptFilter() {
-  const select = document.getElementById('prompt-category-filter');
-  const categories = [...new Set(state.promptVault.map(item => item.category))];
-  categories.forEach(category => {
-    const option = document.createElement('option');
-    option.value = category;
-    option.textContent = category;
-    select.appendChild(option);
-  });
-}
-
-function renderPromptVault() {
-  const search = document.getElementById('prompt-search').value.trim().toLowerCase();
-  const category = document.getElementById('prompt-category-filter').value;
-  const grid = document.getElementById('prompt-grid');
-  const empty = document.getElementById('prompt-empty');
-  const filtered = state.promptVault.filter(item => {
-    const matchCategory = category === 'All' || item.category === category;
-    const haystack = `${item.title} ${item.category} ${item.prompt}`.toLowerCase();
-    const matchSearch = !search || haystack.includes(search);
-    return matchCategory && matchSearch;
-  });
-
-  grid.innerHTML = '';
-  if (!filtered.length) {
-    empty.style.display = 'block';
-    return;
-  }
-  empty.style.display = 'none';
-  filtered.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = 'prompt-card';
-    card.innerHTML = `
-      <span class="prompt-tag">${escapeHtml(item.category)}</span>
-      <h4>${escapeHtml(item.title)}</h4>
-      <div class="prompt-text">${escapeHtml(item.prompt)}</div>
-      <button class="btn-primary" onclick="copyPrompt(${index})">Copy Prompt</button>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-function copyPrompt(index) {
-  navigator.clipboard.writeText(state.promptVault[index].prompt)
-    .then(() => alert('Prompt copied to clipboard.'))
-    .catch(() => alert('Copy failed. Please copy manually.'));
-}
-
-function exportToCSV() {
-  let csvContent = 'data:text/csv;charset=utf-8,Day/Date,Core Pillar,Platform,Caption,Visual Asset,Status,Coaching Notes\n';
-  state.plannerData.forEach(r => {
-    const rowStr = [r.day, r.pillar, r.platform, `"${String(r.caption).replace(/"/g, '""')}"`, r.visual, r.status, `"${String(r.notes || '').replace(/"/g, '""')}"`].join(',');
-    csvContent += rowStr + '\n';
-  });
-  const link = document.createElement('a');
-  link.href = encodeURI(csvContent);
-  link.download = 'bonne_vie_content_export.csv';
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-}
-
-function downloadBackup() {
-  const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(state, null, 2));
-  const link = document.createElement('a');
-  link.href = dataStr;
-  link.download = 'bonne_vie_author_center_backup.json';
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-}
-
-function uploadBackup(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    try {
-      const parsed = JSON.parse(e.target.result);
-      if (parsed && Array.isArray(parsed.plannerData) && Array.isArray(parsed.checklists)) {
-        state = {
-          plannerData: parsed.plannerData,
-          checklists: parsed.checklists,
-          promptVault: Array.isArray(parsed.promptVault) ? parsed.promptVault : promptVault
-        };
-        saveState();
-        refreshAll();
-        alert('Workspace updated successfully.');
-      } else {
-        alert('This backup file is missing required sections.');
-      }
-    } catch (err) {
-      alert('Error reading file. Please upload a valid JSON backup.');
+  function deleteRow(index) {
+    if (confirm('Are you sure you want to remove this scheduling row?')) {
+      state.plannerData.splice(index, 1);
+      saveState();
+      renderPlanner();
     }
-  };
-  reader.readAsText(file);
-}
+  }
 
-function setupTabs() {
-  document.querySelectorAll('.tab-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
-      button.classList.add('active');
-      document.getElementById(`${button.dataset.tab}-panel`).classList.add('active');
+  function resetSandboxGrid() {
+    if (confirm('Reset the sandbox grid back to the original seeded content?')) {
+      state.plannerData = JSON.parse(JSON.stringify(initialPlannerData));
+      saveState();
+      renderPlanner();
+    }
+  }
+
+  function calculatePlannerMetrics() {
+    const totalRows = state.plannerData.length || 1;
+    const promoCount = state.plannerData.filter(r => r.pillar === 'Book Promotion 📖').length;
+    const promoPercentage = Math.round((promoCount / totalRows) * 100);
+
+    document.getElementById('balance-stat').innerText = `${promoPercentage}%`;
+    document.getElementById('balance-bar').style.width = `${promoPercentage}%`;
+
+    const badge = document.getElementById('balance-badge');
+    if (promoPercentage <= 25) {
+      badge.innerText = 'Balanced ✅';
+      badge.style.backgroundColor = 'var(--sage-light)';
+    } else {
+      badge.innerText = 'Heavy Promo ⚠️';
+      badge.style.backgroundColor = '#FDF2F2';
+    }
+
+    const drafts = state.plannerData.filter(r => r.status === '☐ Draft').length;
+    const scheduled = state.plannerData.filter(r => r.status === '🔄 Scheduled').length;
+    const live = state.plannerData.filter(r => r.status === '✅ Live').length;
+
+    document.getElementById('completion-stat').innerText = `${scheduled + live} / ${state.plannerData.length}`;
+    document.getElementById('status-breakdown').innerText = `Drafts: ${drafts} | Scheduled: ${scheduled} | Live: ${live}`;
+
+    const counts = {};
+    state.plannerData.forEach(r => counts[r.pillar] = (counts[r.pillar] || 0) + 1);
+    document.getElementById('top-pillar').innerText =
+      Object.keys(counts).length ? Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b) : '—';
+  }
+
+  function renderChecklists() {
+    const container = document.getElementById('checklists-container');
+    container.innerHTML = '';
+
+    state.checklists.forEach((group, groupIndex) => {
+      const completed = group.items.filter(item => item.done).length;
+      const percent = group.items.length ? Math.round((completed / group.items.length) * 100) : 0;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'checklist-group';
+      wrapper.innerHTML = `
+        <div class="checklist-head">
+          <div>
+            <div class="checklist-title">${escapeHtml(group.title)}</div>
+            <div class="checklist-meta">${escapeHtml(group.cadence)}</div>
+          </div>
+          <span class="badge">${percent}%</span>
+        </div>
+        ${group.items.map((item, itemIndex) => `
+          <label class="checklist-item ${item.done ? 'done' : ''}">
+            <input type="checkbox" ${item.done ? 'checked' : ''} onchange="toggleChecklistItem(${groupIndex}, ${itemIndex}, this.checked)">
+            <span>${escapeHtml(item.text)}</span>
+          </label>
+        `).join('')}
+        <div class="progress-bar"><div class="progress-fill" style="width:${percent}%"></div></div>
+        <div class="checklist-meta" style="margin-top:8px;">${escapeHtml(group.progressLabel)} • ${percent}%</div>
+      `;
+      container.appendChild(wrapper);
     });
-  });
-}
 
-function refreshAll() {
-  renderPlanner();
-  renderChecklists();
-  renderPromptVault();
-}
+    calculateChecklistMetrics();
+  }
 
-document.getElementById('prompt-search').addEventListener('input', renderPromptVault);
-document.getElementById('prompt-category-filter').addEventListener('change', renderPromptVault);
+  function toggleChecklistItem(groupIndex, itemIndex, checked) {
+    state.checklists[groupIndex].items[itemIndex].done = checked;
+    saveState();
+    renderChecklists();
+  }
 
-populatePromptFilter();
-setupTabs();
-refreshAll();
+  function calculateChecklistMetrics() {
+    const allItems = state.checklists.flatMap(group => group.items);
+    const total = allItems.length;
+    const completed = allItems.filter(item => item.done).length;
+    const percent = total ? Math.round((completed / total) * 100) : 0;
+
+    document.getElementById('checklist-progress-stat').innerText = `${percent}%`;
+    document.getElementById('checklist-progress-bar').style.width = `${percent}%`;
+    document.getElementById('checklist-summary').innerText = `${completed} of ${total} checklist items completed.`;
+    document.getElementById('summary-total-items').innerText = total;
+    document.getElementById('summary-completed-items').innerText = completed;
+
+    const groupsOnTrack = state.checklists.filter(group => group.items.every(item => item.done)).length;
+    document.getElementById('summary-groups-on-track').innerText = groupsOnTrack;
+
+    const nextGroup = state.checklists.find(group => group.items.some(item => !item.done));
+    document.getElementById('summary-next-focus').innerText = nextGroup ? nextGroup.title : 'Everything is complete. Great work.';
+  }
+
+  function populatePromptFilter() {
+    const select = document.getElementById('prompt-category-filter');
+    select.innerHTML = '';
+    Object.keys(promptVault).forEach(category => {
+      const option = document.createElement('option');
+      option.value = category;
+      option.textContent = category;
+      if (category === state.selectedPromptCategory) option.selected = true;
+      select.appendChild(option);
+    });
+  }
+
+  function renderPromptVault() {
+    const category = document.getElementById('prompt-category-filter').value || state.selectedPromptCategory;
+    state.selectedPromptCategory = category;
+    saveState();
+
+    const search = document.getElementById('prompt-search').value.trim().toLowerCase();
+    const prompts = (promptVault[category] || []).filter(prompt => !search || prompt.toLowerCase().includes(search));
+
+    const grid = document.getElementById('prompt-grid');
+    const empty = document.getElementById('prompt-empty');
+    grid.innerHTML = '';
+
+    if (!prompts.length) {
+      empty.style.display = 'block';
+      return;
+    }
+
+    empty.style.display = 'none';
+
+    prompts.forEach((prompt, index) => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      card.innerHTML = `
+        <div class="prompt-number">PROMPT #${index + 1}</div>
+        <div class="prompt-text">${escapeHtml(prompt)}</div>
+        <button class="btn-primary" onclick="copyPrompt(${index})">Copy Prompt</button>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function copyPrompt(index) {
+    const category = state.selectedPromptCategory;
+    const prompt = (promptVault[category] || [])[index] || '';
+    navigator.clipboard.writeText(prompt)
+      .then(() => alert('Prompt copied to clipboard.'))
+      .catch(() => alert('Copy failed. Please copy manually.'));
+  }
+
+  function copyCustomInstruction() {
+    navigator.clipboard.writeText(customInstruction)
+      .then(() => alert('Custom instruction copied to clipboard.'))
+      .catch(() => alert('Copy failed. Please copy manually.'));
+  }
+
+  function exportToCSV() {
+    let csvContent = "data:text/csv;charset=utf-8,Day/Date,Core Pillar,Platform,Caption,Visual Asset,Status,Coaching Notes\n";
+    state.plannerData.forEach(r => {
+      const rowStr = [
+        r.day,
+        r.pillar,
+        r.platform,
+        `"${String(r.caption).replace(/"/g, '""')}"`,
+        r.visual,
+        r.status,
+        `"${String(r.notes || '').replace(/"/g, '""')}"`
+      ].join(",");
+      csvContent += rowStr + "\n";
+    });
+
+    const link = document.createElement("a");
+    link.href = encodeURI(csvContent);
+    link.download = "bonne_vie_content_export.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function downloadBackup() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+    const link = document.createElement('a');
+    link.href = dataStr;
+    link.download = 'bonne_vie_author_center_backup.json';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function uploadBackup(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const parsed = JSON.parse(e.target.result);
+        if (parsed && Array.isArray(parsed.plannerData) && Array.isArray(parsed.checklists)) {
+          state = {
+            plannerData: parsed.plannerData,
+            checklists: parsed.checklists,
+            selectedPromptCategory: parsed.selectedPromptCategory || 'Behind the Book 📖'
+          };
+          saveState();
+          populatePromptFilter();
+          refreshAll();
+          alert('Workspace updated successfully.');
+        } else {
+          alert('This backup file is missing required sections.');
+        }
+      } catch (err) {
+        alert('Error reading file. Please upload a valid JSON backup.');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function setupTabs() {
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(`${button.dataset.tab}-panel`).classList.add('active');
+      });
+    });
+  }
+
+  function refreshAll() {
+    renderPlanner();
+    renderChecklists();
+    renderPromptVault();
+  }
+
+  document.getElementById('prompt-search').addEventListener('input', renderPromptVault);
+  document.getElementById('prompt-category-filter').addEventListener('change', renderPromptVault);
+  document.getElementById('custom-instruction-text').textContent = customInstruction;
+
+  populatePromptFilter();
+  setupTabs();
+  refreshAll();
 </script>
 </body>
 </html>
