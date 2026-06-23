@@ -47,7 +47,7 @@
             align-items: center;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .brand h1 {
@@ -99,6 +99,43 @@
 
         .btn-primary:hover {
             background-color: #3D573C;
+        }
+
+        /* Navigation Tabs */
+        .tabs-nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .tab-btn:hover {
+            color: #2C3E2B;
+            background-color: rgba(138, 154, 134, 0.1);
+        }
+
+        .tab-btn.active {
+            color: #2C3E2B;
+            background-color: var(--sage-light);
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         /* Analytics Dashboard Grid */
@@ -160,11 +197,11 @@
         .progress-fill {
             background: var(--sage-green);
             height: 100%;
-            width: 14%;
+            width: 0%;
             transition: width 0.3s ease;
         }
 
-        /* Workspace Grid Table */
+        /* Workspace Cards */
         .workspace-card {
             background: var(--card-white);
             border-radius: 16px;
@@ -186,6 +223,7 @@
             color: #2C3E2B;
         }
 
+        /* Tab 1: Table Layout */
         .table-responsive {
             overflow-x: auto;
         }
@@ -251,8 +289,89 @@
             padding: 5px;
         }
 
-        .btn-delete:hover {
-            color: #FF0000;
+        /* Tab 2: Checklists layout */
+        .checklist-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .checklist-group h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2C3E2B;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: #FCFAF7;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--sage-green);
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .check-text label {
+            font-weight: 600;
+            color: #2C3E2B;
+            cursor: pointer;
+        }
+
+        .check-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Tab 3: Prompt Vault Layout */
+        .prompt-card {
+            background: #FCFAF7;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .prompt-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2C3E2B;
+            margin-bottom: 8px;
+        }
+
+        .prompt-box {
+            background: #FFF;
+            border: 1px dashed var(--sage-green);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #444;
+            position: relative;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+
+        .btn-copy {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--sage-light);
+            color: #2C3E2B;
+            font-size: 0.75rem;
+            padding: 4px 8px;
         }
 
         footer {
@@ -274,64 +393,163 @@
             <p>HeartWork Creative • Author Success Center & Sandbox</p>
         </div>
         <div class="actions">
-            <button class="btn-secondary" onclick="exportToCSV()">Export to Sheets (CSV)</button>
+            <button class="btn-secondary" onclick="exportToCSV()">Export Grid (CSV)</button>
             <button class="btn-secondary" onclick="downloadBackup()">📥 Download Backup File</button>
-            <button class="btn-primary" onclick="document.getElementById('uploadInput').click()">📤 Upload Coach/Client File</button>
+            <button class="btn-primary" onclick="document.getElementById('uploadInput').click()">📤 Upload Client/Coach File</button>
             <input type="file" id="uploadInput" style="display:none" onchange="uploadBackup(event)" accept=".json">
         </div>
     </header>
 
-    <div class="analytics-grid">
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">80/20 Marketing Balance</span>
-                <span class="badge" id="balance-badge">Balanced ✅</span>
+    <nav class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('tab-grid', this)">📝 30-Day Sandbox Grid</button>
+        <button class="tab-btn" onclick="switchTab('tab-checklists', this)">✅ Interactive Checklists</button>
+        <button class="tab-btn" onclick="switchTab('tab-prompts', this)">🤖 AI Prompt Vault</button>
+    </nav>
+
+    <div id="tab-grid" class="tab-content active">
+        <div class="analytics-grid">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">80/20 Marketing Balance</span>
+                    <span class="badge" id="balance-badge">Balanced ✅</span>
+                </div>
+                <div class="stat" id="balance-stat">14%</div>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Focusing beautifully on storytelling and deep connection over sales text.</p>
+                <div class="progress-bar"><div class="progress-fill" id="balance-bar"></div></div>
             </div>
-            <div class="stat" id="balance-stat">14%</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Focusing beautifully on storytelling and deep connection over sales text.</p>
-            <div class="progress-bar"><div class="progress-fill" id="balance-bar"></div></div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Plan Completion Status</span>
+                    <span class="badge">Sandbox State</span>
+                </div>
+                <div class="stat" id="completion-stat">3 / 7</div>
+                <p style="font-size: 0.85rem; color: var(--text-muted);" id="status-breakdown">Drafts: 4 | Scheduled: 3 | Live: 0</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Top Content Pillar Focus</span>
+                    <span class="badge">Focus Map</span>
+                </div>
+                <div class="stat" style="font-size: 1.5rem; padding-top: 8px;" id="top-pillar">Provence State of Mind 🌿</div>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Themes remain elegantly distributed to ensure reader resonance.</p>
+            </div>
         </div>
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Plan Completion Status</span>
-                <span class="badge">Sandbox State</span>
+
+        <div class="workspace-card">
+            <div class="workspace-title-area">
+                <h2>📝 Georgie's Content Planning Workspace</h2>
+                <button class="btn-primary" onclick="addNewRow()">+ Add Custom Day Row</button>
             </div>
-            <div class="stat" id="completion-stat">3 / 7</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);" id="status-breakdown">Drafts: 4 | Scheduled: 3 | Live: 0</p>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Top Content Pillar Focus</span>
-                <span class="badge">Focus Map</span>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 12%">Day / Date</th>
+                            <th style="width: 18%">Core Pillar Focus</th>
+                            <th style="width: 15%">Platform Target</th>
+                            <th style="width: 25%">Written Caption Sandbox</th>
+                            <th style="width: 15%">Visual Asset Reference</th>
+                            <th style="width: 12%">Posting Status</th>
+                            <th style="width: 20%">Coaching Notes</th>
+                            <th style="width: 3%"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="sandbox-tbody"></tbody>
+                </table>
             </div>
-            <div class="stat" style="font-size: 1.5rem; padding-top: 8px;" id="top-pillar">Provence State of Mind 🌿</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Themes remain elegantly distributed to ensure reader resonance.</p>
         </div>
     </div>
 
-    <div class="workspace-card">
-        <div class="workspace-title-area">
-            <h2>📝 Georgie's Content Planning Workspace</h2>
-            <button class="btn-primary" onclick="addNewRow()">+ Add Custom Day Row</button>
-        </div>
+    <div id="tab-checklists" class="tab-content">
+        <div class="workspace-card">
+            <div class="checklist-layout">
+                <div class="checklist-group">
+                    <h3>🌅 The Daily 15-Minute Connection Habit</h3>
+                    <p style="font-size:0.9rem; color: var(--text-muted); margin-bottom: 15px;">Low-tech community outreach to do while drinking coffee.</p>
+                    
+                    <div class="check-item">
+                        <input type="checkbox" id="habit1" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="habit1">The 5-Minute Morning Wave</label>
+                            <p>Open Facebook/Instagram pages, answer notifications, and reply warmly to any comments or direct messages from readers.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="habit2" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="habit2">The 5-Minute Goodreads Check</label>
+                            <p>Log into Goodreads. Check for notifications, accept pending friend requests, or update your shelves with books you are reading.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="habit3" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="habit3">The 5-Minute Community Seed</label>
+                            <p>Read a post in a travel, France, or book club Facebook group. Leave a supportive, helpful comment without pitching your book.</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 12%">Day / Date</th>
-                        <th style="width: 18%">Core Pillar Focus</th>
-                        <th style="width: 15%">Platform Target</th>
-                        <th style="width: 25%">Written Caption Sandbox</th>
-                        <th style="width: 15%">Visual Asset Reference</th>
-                        <th style="width: 12%">Posting Status</th>
-                        <th style="width: 20%">Coaching Notes</th>
-                        <th style="width: 3%"></th>
-                    </tr>
-                </thead>
-                <tbody id="sandbox-tbody">
-                    </tbody>
-            </table>
+                <div class="checklist-group">
+                    <h3>📅 The Weekly Production Checklist</h3>
+                    <p style="font-size:0.9rem; color: var(--text-muted); margin-bottom: 15px;">Your baseline weekly milestones to match with your coach.</p>
+                    
+                    <div class="check-item">
+                        <input type="checkbox" id="week1" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="week1">Draft 3 Social Media Captions</label>
+                            <p>Write captions using the rotating themes (Pillars) in your Sandbox grid workspace on Tab 1.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="week2" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="week2">Select Canva Graphic</label>
+                            <p>Pick one quote card or book mockup graphic template inside your Canva shared assets.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="week3" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="week3">Schedule inside Meta Business Suite</label>
+                            <p>Batch and schedule all 3 posts inside Meta Business Suite for the entire week ahead.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="week4" onchange="saveChecklistState()">
+                        <div class="check-text">
+                            <label for="week4">Reach Out to One Community</label>
+                            <p>Send an inquiry to a book club, library, or online interest group using the outreach templates on Tab 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-prompts" class="tab-content">
+        <div class="workspace-card">
+            <h2>🤖 Dedicated Prompt Templates for Georgie</h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px;">Copy these custom-engineered prompts to help write fresh content based on your book themes.</p>
+
+            <div class="prompt-card">
+                <h3>🌿 Prompt 1: The French Slow-Living Anecdote Generator</h3>
+                <p>Use this prompt to turn your memories of Provence or scene outlines into cozy social snippets.</p>
+                <div class="prompt-box">
+                    <button class="btn-copy" onclick="copyPrompt(this)">Copy Prompt</button>
+Act as an author copywriter. Help me draft a warm, sensory-rich Instagram post based on the lifestyle theme of "Bonne Vie in Provence". The focus should be on slow living, seasonal beauty, and emotional peace. Include one question at the end to invite reader interaction. Keep the tone intimate, elegant, and literary. Here is the brief concept or scene memory to build from: [Insert details here]
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>📖 Prompt 2: The Elegant Promotional Hook</h3>
+                <p>Use this to write natural, non-salesy book descriptions that highlight the healing themes of the book.</p>
+                <div class="prompt-box">
+                    <button class="btn-copy" onclick="copyPrompt(this)">Copy Prompt</button>
+I need a book promotion post that highlights the core themes of healing, second chances, and adult friendship in my novel "Bonne Vie in Provence". It needs to speak directly to readers who love escape fiction and heartwarming transformations. Suggest 3 optional hooks for the first sentence, a short synopsis paragraph, and a clear call-to-action to check out the link in my bio.
+                </div>
+            </div>
         </div>
     </div>
 
@@ -341,22 +559,34 @@
 </div>
 
 <script>
-    // Initial Seed Data mapping directly to the layout
+    // Navigation Control Tab Switcher
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        btn.classList.add('active');
+    }
+
+    // Dynamic Clipboard Copier
+    function copyPrompt(btn) {
+        const text = btn.parentElement.innerText.replace("Copy Prompt", "").trim();
+        navigator.clipboard.writeText(text).then(() => {
+            btn.innerText = "✓ Copied!";
+            setTimeout(() => btn.innerText = "Copy Prompt", 2000);
+        });
+    }
+
+    // Grid Seeding and Systems Engine
     const initialData = [
-        { day: "Day 1 - Monday", pillar: "Provence State of Mind 🌿", platform: "Facebook Only", caption: "Have you ever wondered where a story begins? For Wendy, it started with a single step into an unknown landscape. For me, it began with an enduring love of France. Writing this book reminded me that sometimes our true path finds us when we least expect it. Have you ever taken a leap of faith into a new chapter of life?", visual: "Book + Coffee Mockup", status: "🔄 Scheduled", notes: "Perfect introductory connection post, Georgie! Let's get an early reading photo ready for this." },
-        { day: "Day 2 - Tuesday", pillar: "Provence State of Mind 🌿", platform: "Facebook + Instagram", caption: "Provence isn't just a place on a map; it's a sensory sanctuary. It's the scent of rosemary warmed by the sun, the slow rhythm of the village markets, and the peace of a stone cottage at sundown. Here is one of my favorite corners of France. Do you prefer active vacations, or slow, restful escapes?", visual: "Lavender Fields Graphic", status: "🔄 Scheduled", notes: "Try using the 'Sage Green' overlay for this photo graphic in Canva." },
-        { day: "Day 3 - Wednesday", pillar: "Chosen Friendships 💜", platform: "Instagram Only", caption: "Meet Wendy, the heartbeat of Bonne Vie in Provence. She didn't expect her life to transform, but she found a collection of chosen friends who held up a mirror to her true self. In our adult lives, friendships are often our deepest anchors. Tag a dear friend who has stood by you through life's unexpected turns!", visual: "Meet the Character Graphic", status: "🔄 Scheduled", notes: "Awesome! We will schedule this on Instagram to build visual excitement around the cast." },
-        { day: "Day 4 - Thursday", pillar: "Healing & Growth 🏡", platform: "Facebook + Instagram", caption: "In Bonne Vie in Provence, the villa is more than brick and stone—it is a safe harbor where hearts find room to heal. We all need a quiet space to mend and catch our breath. Where is your favorite personal retreat when life gets too busy?", visual: "Cozy Quote Card", status: "☐ Draft", notes: "Keep the visual warm and elegant." },
-        { day: "Day 5 - Friday", pillar: "Book Promotion 📖", platform: "Facebook + Instagram", caption: "If you are looking for a heartwarming escape filled with friendship, emotional healing, beautiful French scenery, and second chances, I’d love to welcome you to the community. Bonne Vie in Provence is now available in soft cover or digital eBook. Find the path to your copy via the link in my bio!", visual: "EPUB Stack Promo Image", status: "☐ Draft", notes: "This is our 20% promotion. Simple, clear, and very elegant." },
-        { day: "Day 6 - Saturday", pillar: "Provence State of Mind 🌿", platform: "Pinterest Only", caption: "Taking the slow road through southern France. Let's wander down cobblestone pathways, seek out fresh lavender honey, and remember to live fully in the present moment. #ProvenceLiving #SlowLiving", visual: "French Village Alleyway", status: "☐ Draft", notes: "Pinterest-focused! Great for visual aesthetics." },
-        { day: "Day 7 - Sunday", pillar: "Healing & Growth 🏡", platform: "Goodreads Update", caption: "Hello Goodreads friends! This week, I have been thinking a lot about the courage it takes to leave comfortable shores behind in search of true transformation. What are you reading to feed your soul this Sunday?", visual: "Review Highlight Graphic", status: "☐ Draft", notes: "Excellent Goodreads connection post." }
+        { day: "Day 1 - Monday", pillar: "Provence State of Mind 🌿", platform: "Facebook Only", caption: "Have you ever wondered where a story begins? For Wendy, it started with a single step into an unknown landscape...", visual: "Book + Coffee Mockup", status: "🔄 Scheduled", notes: "Perfect introductory connection post, Georgie!" },
+        { day: "Day 2 - Tuesday", pillar: "Provence State of Mind 🌿", platform: "Facebook + Instagram", caption: "Provence isn't just a place on a map; it's a sensory sanctuary...", visual: "Lavender Fields Graphic", status: "🔄 Scheduled", notes: "Try using the 'Sage Green' overlay here." }
     ];
 
     const pillars = ["Provence State of Mind 🌿", "Second Chances ✨", "Chosen Friendships 💜", "Healing & Growth 🏡", "Book Promotion 📖"];
     const platforms = ["Facebook Only", "Instagram Only", "Facebook + Instagram", "Goodreads Update", "Pinterest Only"];
     const statuses = ["☐ Draft", "🔄 Scheduled", "✅ Live"];
 
-    // Initialize application and look for local cache autosaves
     let activeData = JSON.parse(localStorage.getItem('bonneVieSandboxData')) || initialData;
 
     function renderTable() {
@@ -367,23 +597,11 @@
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td><input type="text" class="day-label" value="${row.day}" onchange="updateValue(${index}, 'day', this.value)"></td>
-                <td>
-                    <select onchange="updateValue(${index}, 'pillar', this.value)">
-                        ${pillars.map(p => `<option value="${p}" ${row.pillar === p ? 'selected' : ''}>${p}</option>`).join('')}
-                    </select>
-                </td>
-                <td>
-                    <select onchange="updateValue(${index}, 'platform', this.value)">
-                        ${platforms.map(pl => `<option value="${pl}" ${row.platform === pl ? 'selected' : ''}>${pl}</option>`).join('')}
-                    </select>
-                </td>
+                <td><select onchange="updateValue(${index}, 'pillar', this.value)">${pillars.map(p => `<option value="${p}" ${row.pillar === p ? 'selected' : ''}>${p}</option>`).join('')}</select></td>
+                <td><select onchange="updateValue(${index}, 'platform', this.value)">${platforms.map(pl => `<option value="${pl}" ${row.platform === pl ? 'selected' : ''}>${pl}</option>`).join('')}</select></td>
                 <td><textarea oninput="updateValue(${index}, 'caption', this.value)">${row.caption}</textarea></td>
                 <td><input type="text" value="${row.visual}" onchange="updateValue(${index}, 'visual', this.value)"></td>
-                <td>
-                    <select onchange="updateValue(${index}, 'status', this.value)">
-                        ${statuses.map(s => `<option value="${s}" ${row.status === s ? 'selected' : ''}>${s}</option>`).join('')}
-                    </select>
-                </td>
+                <td><select onchange="updateValue(${index}, 'status', this.value)">${statuses.map(s => `<option value="${s}" ${row.status === s ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
                 <td><textarea oninput="updateValue(${index}, 'notes', this.value)">${row.notes || ''}</textarea></td>
                 <td><button class="btn-delete" onclick="deleteRow(${index})">×</button></td>
             `;
@@ -395,7 +613,7 @@
     function updateValue(index, field, value) {
         activeData[index][field] = value;
         localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));
-        calculateMetrics(); // Real-time calculation shifts
+        calculateMetrics();
     }
 
     function addNewRow() {
@@ -405,59 +623,58 @@
     }
 
     function deleteRow(index) {
-        if(confirm("Are you sure you want to remove this scheduling row?")) {
+        if(confirm("Are you sure?")) {
             activeData.splice(index, 1);
             localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));
             renderTable();
         }
     }
 
-    // Advanced dynamic metrics calculator
     function calculateMetrics() {
         const totalRows = activeData.length;
         if(totalRows === 0) return;
-
         const promoCount = activeData.filter(r => r.pillar === "Book Promotion 📖").length;
         const promoPercentage = Math.round((promoCount / totalRows) * 100);
-        
         document.getElementById('balance-stat').innerText = `${promoPercentage}%`;
         document.getElementById('balance-bar').style.width = `${promoPercentage}%`;
-        
-        const badge = document.getElementById('balance-badge');
-        if (promoPercentage <= 25) {
-            badge.innerText = "Balanced ✅";
-            badge.style.backgroundColor = "var(--sage-light)";
-        } else {
-            badge.innerText = "Heavy Promo ⚠️";
-            badge.style.backgroundColor = "#FDF2F2";
-        }
-
         const drafts = activeData.filter(r => r.status === "☐ Draft").length;
         const scheduled = activeData.filter(r => r.status === "🔄 Scheduled").length;
         const live = activeData.filter(r => r.status === "✅ Live").length;
-
         document.getElementById('completion-stat').innerText = `${scheduled + live} / ${totalRows}`;
         document.getElementById('status-breakdown').innerText = `Drafts: ${drafts} | Scheduled: ${scheduled} | Live: ${live}`;
-
-        // Find Top Pillar Focus
-        const counts = {};
-        activeData.forEach(r => counts[r.pillar] = (counts[r.pillar] || 0) + 1);
-        const topPillar = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b, pillars[0]);
-        document.getElementById('top-pillar').innerText = topPillar;
     }
 
-    // Collaboration Save File Generator
+    // Save Checklist State to Browser Storage
+    function saveChecklistState() {
+        const checkboxes = document.querySelectorAll('.check-item input[type="checkbox"]');
+        const state = {};
+        checkboxes.forEach(cb => state[cb.id] = cb.checked);
+        localStorage.setItem('bonneVieChecklistState', JSON.stringify(state));
+    }
+
+    function loadChecklistState() {
+        const state = JSON.parse(localStorage.getItem('bonneVieChecklistState')) || {};
+        Object.keys(state).forEach(id => {
+            const cb = document.getElementById(id);
+            if(cb) cb.checked = state[id];
+        });
+    }
+
+    // Consolidated Master Workspace Backup
     function downloadBackup() {
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(activeData, null, 2));
+        const combinedPackage = {
+            grid: activeData,
+            checklists: JSON.parse(localStorage.getItem('bonneVieChecklistState')) || {}
+        };
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(combinedPackage, null, 2));
         const downloadAnchor = document.createElement('a');
         downloadAnchor.setAttribute("href", dataStr);
-        downloadAnchor.setAttribute("download", "georgie_provence_workspace.json");
+        downloadAnchor.setAttribute("download", "georgie_full_workspace.json");
         document.body.appendChild(downloadAnchor);
         downloadAnchor.click();
         downloadAnchor.remove();
     }
 
-    // Collaboration Load File Processor
     function uploadBackup(event) {
         const file = event.target.files[0];
         if (!file) return;
@@ -465,37 +682,32 @@
         reader.onload = function(e) {
             try {
                 const parsed = JSON.parse(e.target.result);
-                if (Array.isArray(parsed)) {
-                    activeData = parsed;
+                if (parsed.grid) {
+                    activeData = parsed.grid;
                     localStorage.setItem('bonneVieSandboxData', JSON.stringify(activeData));
+                    localStorage.setItem('bonneVieChecklistState', JSON.stringify(parsed.checklists || {}));
                     renderTable();
-                    alert("Workspace updated successfully with the loaded files!");
+                    loadChecklistState();
+                    alert("Master Workspace successfully loaded!");
                 }
-            } catch (err) {
-                alert("Error reading file configuration. Ensure it's a valid dashboard backup.");
-            }
+            } catch (err) { alert("Invalid backup configuration file."); }
         };
         reader.readAsText(file);
     }
 
-    // CSV Spreadsheet Exporter
     function exportToCSV() {
         let csvContent = "data:text/csv;charset=utf-8,Day/Date,Core Pillar,Platform,Caption,Visual Asset,Status,Coaching Notes\n";
         activeData.forEach(r => {
-            const rowStr = [r.day, r.pillar, r.platform, `"${r.caption.replace(/"/g, '""')}"`, r.visual, r.status, `"${(r.notes || '').replace(/"/g, '""')}"`].join(",");
-            csvContent += rowStr + "\n";
+            csvContent += [r.day, r.pillar, r.platform, `"${r.caption.replace(/"/g, '""')}"`, r.visual, r.status, `"${(r.notes || '').replace(/"/g, '""')}"`].join(",") + "\n";
         });
-        const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "bonne_vie_content_export.csv");
-        document.body.appendChild(link);
+        link.setAttribute("href", encodeURI(csvContent));
+        link.setAttribute("download", "bonne_vie_grid.csv");
         link.click();
-        link.remove();
     }
 
-    // Trigger grid initialization
     renderTable();
+    loadChecklistState();
 </script>
 </body>
 </html>
