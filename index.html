@@ -994,12 +994,10 @@
   }
 
   function resetSandboxGrid() {
-    if (confirm('Reset the sandbox grid back to the original seeded content?')) {
       state.plannerData = JSON.parse(JSON.stringify(initialPlannerData));
       saveState();
       renderPlanner();
-    }
-  }
+}
 
   function calculatePlannerMetrics() {
     const totalRows = state.plannerData.length || 1;
