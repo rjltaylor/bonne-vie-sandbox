@@ -1,0 +1,47 @@
+project_id = "bgvtqvfbdzqreyxrkfce"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[inbucket]
+enabled = true
+port = 54324
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["https://rjltaylor.github.io/bonne-vie-sandbox"]
+jwt_expiry = 3600
+enable_signup = true
+enable_anonymous_sign_ins = false
+
+[edge_runtime]
+enabled = true
+policy = "per_worker"
+inspector_port = 8083
+
+auth_image = "supabase/gotrue:v2.177.0"
+rest_image = "postgrest/postgrest:v12.2.12"
+storage_image = "supabase/storage-api:v1.23.0"
+imgproxy_image = "darthsim/imgproxy:v3.8.0"
+realtime_image = "supabase/realtime:v2.34.47"
+meta_image = "supabase/postgres-meta:v0.89.3"
+studio_image = "supabase/studio:20250616-7f84a84"
+inbucket_image = "inbucket/inbucket:3.1.0"
